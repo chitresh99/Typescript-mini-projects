@@ -1,0 +1,23 @@
+{
+  "name": "tradeplace",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest",
+    "@types/dotenv": "^8.2.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/pg": "^8.15.4"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  },
+  "dependencies": {
+    "@types/express": "^5.0.3",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "jsonwebtoken": "^9.0.2",
+    "pg": "^8.16.3",
+    "zod": "^4.1.0-canary.20250711T201420"
+  }
+}
