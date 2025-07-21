@@ -27,7 +27,7 @@
 
 ```json
 {
-  "stockname": "AAPL",
+  "stockname": "stockofyourchoice",
   "amount": 10000,
   "price_per_share": 150,
   "quantity_of_shares": 66
