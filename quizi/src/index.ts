@@ -4,6 +4,8 @@ import dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes'; 
 import { authenticate } from './middlewares/auth.middleware';
 import quizRoutes from './routes/quiz.routes';
+import submissionRoutes from './routes/submission.route';
+
 dotenv.config();
 
 const app = express();
@@ -23,6 +25,9 @@ app.get('/api/protected', authenticate, (req, res) => {
 });
 
 app.use('/api/quiz',quizRoutes);
+
+
+app.use('/api/quizzes', submissionRoutes);
 
 
 app.listen(PORT, () => {
