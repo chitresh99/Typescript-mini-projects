@@ -2,6 +2,8 @@ import express from 'express';
 import cors from 'cors';
 import dotenv from 'dotenv';
 import authRoutes from './routes/auth.routes'; 
+import { authenticate } from './middlewares/auth.middleware';
+import quizRoutes from './routes/quiz.routes';
 dotenv.config();
 
 const app = express();
@@ -15,6 +17,13 @@ app.get('/', (req, res) => {
 });
 
 app.use('/api/auth', authRoutes);
+
+app.get('/api/protected', authenticate, (req, res) => {
+  res.json({ message: 'Protected route accessed!', user: (req as any).user });
+});
+
+app.use('/api/quiz',quizRoutes);
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`);
